@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>程仕奇的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://cheng-shiqi.github.io/"/>
+  <updated>2019-04-01T04:06:40.633Z</updated>
+  <id>https://cheng-shiqi.github.io/</id>
+  
+  <author>
+    <name>cheng-shiqi</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARTS 第 1 周</title>
+    <link href="https://cheng-shiqi.github.io/2019/04/01/ARTS-1/"/>
+    <id>https://cheng-shiqi.github.io/2019/04/01/ARTS-1/</id>
+    <published>2019-04-01T03:40:00.000Z</published>
+    <updated>2019-04-01T04:06:40.633Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h2><hr><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">Two Sum</a>：Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice.<br><strong>Example</strong>:  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line"><span class="built_in">return</span> [0, 1].</span><br></pre></td></tr></table></figure><h3 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment">* @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment">* @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> twoSum = <span class="function"><span class="keyword">function</span> <span class="title">function_name</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (nums.length === <span class="number">2</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> [i, num] <span class="keyword">of</span> nums.entries()) &#123;</span><br><span class="line">          <span class="keyword">let</span> diff = target - num</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (map.has(diff)) &#123;</span><br><span class="line">               <span class="keyword">return</span> [map.get(diff), i]</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">else</span> &#123;</span><br><span class="line">               map.set(num, i)</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Review-How-Computers-Work-1-3-课笔记"><a href="#Review-How-Computers-Work-1-3-课笔记" class="headerlink" title="Review - How Computers Work 1~3 课笔记"></a>Review - <a href="https://www.khanacademy.org/computing/computer-science/how-computers-work2" target="_blank" rel="noopener">How Computers Work</a> 1~3 课笔记</h2><hr><p><em>How Computers Work</em> 是 code.org 为儿童制作的解释计算机工作原理的系列课。</p><ul><li>同人类以前发明的那些帮助自己干体力劳动的机器不一样，计算机处理的对象不是物理世界里的实物，而是虚拟的信息。</li><li>无论是最古老的巨型计算机，还是如今那些功能繁杂的计算机，它们的基本功能只有四项：<ul><li>Input：<strong>接收</strong>信息；向计算机输入方式多种多样：键盘、鼠标、摄像机、体感设备……</li><li>Store：把接收的信息作为数据<strong>储存</strong></li><li>Process：使用算法（一系列指令）<strong>处理</strong>内存中的数据，处理的结果继续储存或输出</li><li>Output：<strong>输出</strong>信息；计算机输出信息的样式也同样很多：文字，音视频，游戏，虚拟现实等，电脑联网后，一台电脑输出的信息还可以成为另一台电脑输入的信息</li></ul></li><li>同人类使用语言来表征（represent）一切认识的事物一样，计算也拥有一套自己语言，用于表征一切接受的一切信息（数字，文本，图像和声音）。</li><li>计算机这套语言的最小单位的载体（文字）是一条电线（电子电路），这条电线有通电和不通电两个状态，可以用于分别标示“是/否”，“对/错”，“0/1”这样的概念。我们知道，借助二进制计数系统，仅用“0”和“1”两个符号就可以表示所有数字，也就是说，8 条计算机电路，就可以表示 0~250 之间的数字，电路数量也多，能表示的数字就越多。</li><li>而后基于数字，人们又建立其他的文字系统，让计算机可以把它接受的其他类型的信息都“翻译”成二进制数字<ul><li>表示文字：建立一个把自然语言中的每个字符（字母、象形文字、标点符号等）与一个二进制数字一一对应的系统（字符编码）</li><li>表示图像：建立像素颜色和二进制数值的对应关系</li><li>表示声音：建立声音模拟信号和二进制数值的对应关系</li></ul></li></ul><h2 id="Tips-利用-vlmcsd-搭建-KMS-服务器"><a href="#Tips-利用-vlmcsd-搭建-KMS-服务器" class="headerlink" title="Tips - 利用 vlmcsd 搭建 KMS 服务器"></a>Tips - 利用 vlmcsd 搭建 KMS 服务器</h2><hr><p>起因：半年之前在笔记本的售后处修电脑顺便买了 Windows 10 专业版，前几天显示激活码已失效。网上搜索了一下发现之前的是用 KMS 激活的，有效期只有 180 天，于是自己用开源的激活工具 <a href="https://github.com/Wind4/vlmcsd" target="_blank" rel="noopener">vlmcsd</a> 在 VPS 上搭 KMS 服务器重新激活。</p><h3 id="1-搭建服务器"><a href="#1-搭建服务器" class="headerlink" title="1. 搭建服务器"></a>1. 搭建服务器</h3><p>下载并解压 vlmcsd，根据自己 VPS 的操作系统选择服务器程序</p><pre><code>cd ./vlmcsd-1108-2017-01-19-Hotbird64/binaries/Linux/intel/static &amp;&amp; cp vlmcsd-x64-musl-static kms &amp;&amp; mv kms /usr/bin</code></pre><p>修改权限</p><pre><code>chmod +x /usr/bin/kms</code></pre><p>启动服务</p><pre><code>kms</code></pre><p>这个服务侦听的端口是1688，可以输入以下命令查看运行状态</p><pre><code>netstat -ap | grep 1688</code></pre><p>加程序加入开机启动列表（在下列的文件中加入 <code>/usr/bin/kms</code>）</p><pre><code>vim /etc/rc.local</code></pre><h3 id="2-Windows-本地激活"><a href="#2-Windows-本地激活" class="headerlink" title="2. Windows 本地激活"></a>2. Windows 本地激活</h3><p>以管理员身份打开命令提示符，然执行下列命令激活</p><pre><code>cd /d &quot;%SystemRoot%\system32&quot;slmgr /skms 你的VPS的IP或者绑定的域名slmgr /atoslmgr /xpr</code></pre><p>输入 slmgr.vbs -dlv 可查询激活状态</p><h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="https://imeiji.github.io/2018/02/08/利用vlmcsd搭建KMS激活服务器/" target="_blank" rel="noopener">在VPS中利用vlmcsd搭建KMS激活服务器</a></p><p><a href="wwww.lvmoo.com/517.love">Linux上利用vlmcsd搭建KMS服务器</a></p><h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><hr><p>这周没写文章</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;algorithm&quot;&gt;&lt;a href=&quot;#algorithm&quot; class=&quot;headerlink&quot; title=&quot;algorithm&quot;&gt;&lt;/a&gt;algorithm&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;hea
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://cheng-shiqi.github.io/2018/02/27/hello-world/"/>
+    <id>https://cheng-shiqi.github.io/2018/02/27/hello-world/</id>
+    <published>2018-02-26T16:00:00.000Z</published>
+    <updated>2019-04-01T04:15:41.305Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
